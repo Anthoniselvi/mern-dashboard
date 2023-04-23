@@ -6,16 +6,23 @@ import { setMode } from 'state'
 import profileImage from "assets/profile.jpg"
 import { AppBar, Toolbar, useTheme, IconButton , InputBase } from '@mui/material'
 
-export default function Navbar() {
+export default function Navbar({isSidebarOpen,
+    setIsSidebarOpen,
+    isNonMobile}) {
     const dispatch = useDispatch()
     const theme = useTheme()
   return (
     <AppBar sx={{position: "static", background: "none", boxShadow: "none"}}>
     <Toolbar sx={{justifyContent: "space-between"}}>
     <FlexBetween>
-<IconButton onClick={() => console.log('open/close sidebar')}>
+{/* <IconButton onClick={() => console.log('open/close sidebar')}>
     <MenuIcon />
-</IconButton>
+</IconButton> */}
+{isNonMobile && (
+                  <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+                    <MenuIcon />
+                  </IconButton>
+                )}
 <FlexBetween backgroundColor={theme.palette.background.alt} borderRadius='9px' gap='3rem' p='0.1rem 1.5rem'>
 <InputBase placeholder="Search..." />
 </FlexBetween>
