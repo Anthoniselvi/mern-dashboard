@@ -13,7 +13,7 @@ const Layout = () => {
   const { data } = useGetUserQuery(userId);
 
   return (
-    <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">
+    <Box display={isNonMobile ? "flex" : ""} width="100%" height="100%">
       <Sidebar
         user={data || {}}
         isNonMobile={isNonMobile}
@@ -21,7 +21,7 @@ const Layout = () => {
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
       />
-      <Box flexGrow={1}>
+      <Box flexGrow={1} >
         <Navbar
           user={data || {}}
           isSidebarOpen={isSidebarOpen}

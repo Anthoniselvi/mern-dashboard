@@ -12,13 +12,13 @@ export default function Navbar({isSidebarOpen,
     const dispatch = useDispatch()
     const theme = useTheme()
   return (
-    <AppBar sx={{position: "static", background: "none", boxShadow: "none"}}>
+    <AppBar sx={{position: "static", background: "none", boxShadow: "none", padding: 0, }}>
     <Toolbar sx={{justifyContent: "space-between"}}>
     <FlexBetween>
 {/* <IconButton onClick={() => console.log('open/close sidebar')}>
     <MenuIcon />
 </IconButton> */}
-{isNonMobile && (
+{!isNonMobile && (
                   <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                     <MenuIcon />
                   </IconButton>
